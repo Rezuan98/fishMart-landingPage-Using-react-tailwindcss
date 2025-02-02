@@ -36,7 +36,7 @@ function App() {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <Fish className="h-8 w-8" />
-              <span className="text-2xl font-bold">OceanFresh</span>
+              <span className="text-2xl font-bold">FishMart</span>
             </div>
             <nav className="hidden md:flex space-x-8">
               <a href="#home" className="hover:text-blue-300">Home</a>
@@ -55,7 +55,7 @@ function App() {
       <section id="home" className="relative h-96">
         <div className="absolute inset-0">
           <img 
-            src="/api/placeholder/1200/600"
+            src="./fish.gif"
             alt="Ocean background" 
             className="w-full h-full object-cover"
           />
@@ -103,7 +103,7 @@ function App() {
           <div className="grid md:grid-cols-3 gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src={`/api/placeholder/600/400`} alt={product.name} className="w-full h-48 object-cover" />
+                <img src={`./ci1.jpg`} alt={product.name} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
