@@ -1,5 +1,5 @@
-import React, { useState } from 'react'; // Import useState
-import { Fish, Truck, Package, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { useState } from "react"; // Import useState
+import { Fish, Truck, Package, Phone, Mail, MapPin } from "lucide-react";
 
 // Product data structure using PropTypes instead of TypeScript
 const products = [
@@ -7,20 +7,20 @@ const products = [
     id: 1,
     name: "Fresh Salmon",
     price: 24.99,
-    description: "Premium Atlantic salmon, fresh and rich in omega-3"
+    description: "Premium Atlantic salmon, fresh and rich in omega-3",
   },
   {
     id: 2,
     name: "Tuna Steak",
     price: 29.99,
-    description: "Sushi-grade yellowfin tuna steaks"
+    description: "Sushi-grade yellowfin tuna steaks",
   },
   {
     id: 3,
     name: "Sea Bass",
     price: 19.99,
-    description: "Wild-caught Mediterranean sea bass"
-  }
+    description: "Wild-caught Mediterranean sea bass",
+  },
 ];
 
 function App() {
@@ -39,10 +39,18 @@ function App() {
               <span className="text-2xl font-bold">FishMart</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-blue-300">Home</a>
-              <a href="#services" className="hover:text-blue-300">Services</a>
-              <a href="#products" className="hover:text-blue-300">Products</a>
-              <a href="#faq" className="hover:text-blue-300">FAQ</a>
+              <a href="#home" className="hover:text-blue-300">
+                Home
+              </a>
+              <a href="#services" className="hover:text-blue-300">
+                Services
+              </a>
+              <a href="#products" className="hover:text-blue-300">
+                Products
+              </a>
+              <a href="#faq" className="hover:text-blue-300">
+                FAQ
+              </a>
             </nav>
             <button className="bg-blue-700 px-4 py-2 rounded-lg hover:bg-blue-600">
               Contact Us
@@ -54,17 +62,22 @@ function App() {
       {/* Hero Section */}
       <section id="home" className="relative h-96">
         <div className="absolute inset-0">
-          <img 
+          <img
             src="./fish.gif"
-            alt="Ocean background" 
+            alt="Ocean background"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-blue-900/70"></div>
         </div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="text-white max-w-2xl">
-            <h1 className="text-5xl font-bold mb-6">Fresh From The Ocean To Your Table</h1>
-            <p className="text-xl mb-8">Experience the finest selection of fresh seafood, delivered with care and sustainability in mind.</p>
+            <h1 className="text-5xl font-bold mb-6">
+              Fresh From The Ocean To Your Table
+            </h1>
+            <p className="text-xl mb-8">
+              Experience the finest selection of fresh seafood, delivered with
+              care and sustainability in mind.
+            </p>
             <button className="bg-blue-500 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-600 transition-colors">
               Explore Our Catch
             </button>
@@ -80,17 +93,23 @@ function App() {
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <Truck className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Same Day Delivery</h3>
-              <p className="text-gray-600">Fresh seafood delivered to your doorstep within hours of catch.</p>
+              <p className="text-gray-600">
+                Fresh seafood delivered to your doorstep within hours of catch.
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <Package className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Custom Packaging</h3>
-              <p className="text-gray-600">Vacuum-sealed packaging to maintain freshness and quality.</p>
+              <p className="text-gray-600">
+                Vacuum-sealed packaging to maintain freshness and quality.
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <Fish className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Premium Selection</h3>
-              <p className="text-gray-600">Carefully selected fresh catch from sustainable sources.</p>
+              <p className="text-gray-600">
+                Carefully selected fresh catch from sustainable sources.
+              </p>
             </div>
           </div>
         </div>
@@ -99,17 +118,26 @@ function App() {
       {/* Products Section */}
       <section id="products" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Fresh Catch</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Fresh Catch
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src={`./ci1.jpg`} alt={product.name} className="w-full h-48 object-cover" />
+              <div
+                key={product.id}
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+              >
+                <img
+                  src={`./ci1.jpg`}
+                  alt={product.name}
+                  className="w-full h-48 object-cover"
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold">${product.price}</span>
-                    <button 
+                    <button
                       onClick={() => {
                         setSelectedProduct(product);
                         setOrderFormVisible(true);
@@ -130,12 +158,16 @@ function App() {
       {orderFormVisible && selectedProduct && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg p-8 max-w-md w-full">
-            <h3 className="text-2xl font-bold mb-4">Order {selectedProduct.name}</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Order {selectedProduct.name}
+            </h3>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Quantity</label>
-                <input 
-                  type="number" 
+                <label className="block text-sm font-medium mb-1">
+                  Quantity
+                </label>
+                <input
+                  type="number"
                   min="1"
                   value={quantity}
                   onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
@@ -151,15 +183,20 @@ function App() {
                 <input type="email" className="w-full border rounded-lg p-2" />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-1">Delivery Address</label>
-                <textarea className="w-full border rounded-lg p-2" rows={3}></textarea>
+                <label className="block text-sm font-medium mb-1">
+                  Delivery Address
+                </label>
+                <textarea
+                  className="w-full border rounded-lg p-2"
+                  rows={3}
+                ></textarea>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-xl font-bold">
                   Total: ${(selectedProduct.price * quantity).toFixed(2)}
                 </span>
                 <div className="space-x-2">
-                  <button 
+                  <button
                     onClick={() => setOrderFormVisible(false)}
                     className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
                   >
@@ -184,15 +221,40 @@ function App() {
                 <Fish className="h-6 w-6" />
                 <span className="text-xl font-bold">OceanFresh</span>
               </div>
-              <p className="text-blue-200">Bringing the ocean's finest to your table, sustainably and responsibly.</p>
+              <p className="text-blue-200">
+                Bringing the oceans finest to your table, sustainably and
+                responsibly.
+              </p>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#home" className="text-blue-200 hover:text-white">Home</a></li>
-                <li><a href="#services" className="text-blue-200 hover:text-white">Services</a></li>
-                <li><a href="#products" className="text-blue-200 hover:text-white">Products</a></li>
-                <li><a href="#faq" className="text-blue-200 hover:text-white">FAQ</a></li>
+                <li>
+                  <a href="#home" className="text-blue-200 hover:text-white">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className="text-blue-200 hover:text-white"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#products"
+                    className="text-blue-200 hover:text-white"
+                  >
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="#faq" className="text-blue-200 hover:text-white">
+                    FAQ
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
@@ -222,7 +284,9 @@ function App() {
             </div>
           </div>
           <div className="border-t border-blue-800 mt-8 pt-8 text-center">
-            <p className="text-blue-200">&copy; 2024 OceanFresh. All rights reserved.</p>
+            <p className="text-blue-200">
+              &copy; 2024 OceanFresh. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
